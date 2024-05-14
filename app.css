@@ -626,6 +626,7 @@ footer {
 
 .footer-contact-info a{
     transition: 0.2s;
+    color: white;
 }
 
 .footer-contact-info a:visited{
