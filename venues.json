@@ -9,7 +9,7 @@
             { "name": "Mistral", "price": "£12" }
         ],
         "likes": 1973,
-        "imageUrl": "harrisons_coffee.jpeg"
+        "imageUrl": "venuepics/harrisons_coffee.jpeg"
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
             { "name": "Mistral", "price": "£12" }
         ],
         "likes": 587,
-        "imageUrl": "beachcomber.jpg"
+        "imageUrl": "venuepics/beachcomber.jpg"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
             { "name": "Mistral", "price": "£12" }
         ],
         "likes": 1301,
-        "imageUrl": "redlion.jpeg"
+        "imageUrl": "venuepics/redlion.jpeg"
     },
     {
         "id": 4,
@@ -44,7 +44,7 @@
             { "name": "Gobernador", "price": "£35" }
         ],
         "likes": 921,
-        "imageUrl": "gerrys.jpg"
+        "imageUrl": "venuepics/gerrys.jpg"
     },
     {
         "id": 5,

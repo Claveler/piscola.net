@@ -55,7 +55,7 @@ function displayVenues(type = "Bar/Pub", venues) {
         const drinksList = venue.drinks.map(drink => `<li>${drink.name} | <b>${drink.price}</b></li>`).join('');
         const venueHTML = `
             <div class="venue-card">
-                <div class="venue-card-img" style="background-image: url(venuepics/${venue.imageUrl})"></div>
+                <div class="venue-card-img" style="background-image: url(${venue.imageUrl})"></div>
                 <div class="venue-card-info">
                     <div class="venue-card-info-text">
                         <h3>${venue.name}</h3>
