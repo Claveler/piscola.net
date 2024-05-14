@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piscola.net | The Piscola Network</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Blinker:wght@100;200;300;400;600;700;800;900&family=Actor&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/40c13be8e5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- This is the modal for adding new venues -->
+    <dialog class="add-venues-form">
+        <form>
+            <p>Discovered a new piscola spot? Share your find!</p>
+            <div class="text-input">  
+                <input type="text" placeholder="Venue name" required>
+                <i class='bx bxs-quote-left'></i>
+            </div>
+            
+            <div class="dropdown-input">
+                <select required>
+                    <option value="" disabled selected>Venue type</option>
+                    <option>Bar/pub</option>
+                    <option>Liquor store</option>
+                </select>
+                <i class='bx bxs-store'></i>
+            </div>
+
+            <div class="text-input">
+                <input type="text" placeholder="City or location" required>
+                <i class='bx bxs-map' ></i>
+            </div>
+
+            <div class="dropdown-input">
+                <select required>
+                    <option value="" disabled selected>Available pisco brand</option>
+                    <option>Alto del Carmen</option>
+                    <option>Mistral</option>
+                    <option>Gobernador</option>
+                    <option>Other (please explain in comments)</option>
+                </select>
+                <i class='bx bxs-drink bx-flip-horizontal' ></i>
+            </div>
+            
+            <div class="text-input">
+                <input type="text" placeholder="Typical price for piscola, e.g. £12.00" pattern="^[£€$]\d+(\.\d{2})?$" min="0" required><i class='bx bxs-purchase-tag' ></i>
+            </div>
+            
+            <div class="comments-input">
+                <textarea id="comment" rows="4" columns="25" maxlength="140" placeholder="Additional comments..."></textarea>
+            </div>
+            
+            <input type="submit" id="submit-button" value="Share spot">
+        </form>
+    </dialog>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="Piscola SVG.svg" alt="Piscola.net logo"></a>
+                <span id="beta">βeta</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://en.wikipedia.org/wiki/Piscola">What is piscola?</a></li>
+                <li><a href="#">Why Piscola.net?</a></li>
+                <li>
+                    <button id="add-source" onclick="openAddSourceModal()">
+                        Add a piscola source
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <!-- <video autoplay muted loop id="bg-video">
+                <source src="pouringpiscola2.mp4" type="video/mp4">
+            </video> -->
+            <div class="hero-inner">
+                <div class="top-hero">
+                    <h1>A TASTE OF CHILE, WHEREVER YOU ARE</h1>
+                    <p>Chase the Chilean cheer – Find a piscola beyond the Andes. Whether you're craving this iconic
+                        Chilean cocktail in the heart of London or somewhere new, our site has you covered. Browse
+                        through a detailed list of bars and pubs offering Piscola. Utilise the map to locate
+                        establishments near you, or use the search bar to find specific spots in areas like Camden or
+                        Greenwich.</p>
+                    <p>See a venue that catches your eye? Click on any location to view its complete profile. Here,
+                        you’ll discover essential details such as the variety of piscola available, the Chilean
+                        pisco brands used, the bar's ambiance, opening times, and much more. We're here to ensure
+                        you have all the information needed to choose the perfect spot for enjoying a delightful
+                        piscola.</p>
+                </div>
+                <div class="bottom-hero">
+                    <div id="type-selector">
+                        <button id="bars-button" class="type-btn" data-type="bars">Bars & pubs</button>
+                        <button id="stores-button" class="type-btn" data-type="stores">Liquor stores</button>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search venues by location">
+                        <!-- <button class="search-btn">🔍</button> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="venues">
+            <div class="add-venues-prompt">
+                <p>
+                    Have you found piscola at some place you don't see here?
+                    <br>
+                    <a href="javascript:void(0);" onclick="openAddSourceModal()" class="underline-link">Let us know!</a>
+                </p>
+            </div>
+
+            <div class="venue-card">
+                <img class="venue-card-img" src="http://via.placeholder.com/640x360">
+                <div class="venue-card-info">
+                    <div class="venue-card-info-text">
+                        <h3>Venue name</h3>
+                        <p>Venue type</p>
+                        <p>Venue address</p>
+                    </div>
+                    <ul class="venue-card-pisco-pills">
+                        <li>Pisco brand available 1 | <b>£xx</b></li>
+                        <li>Pisco brand available 2 | <b>£xx</b></li>
+                    </ul>
+                </div>
+                <div class="upvoting-ui">
+                    <button class="upvoting-button" onclick="testFunction()" title="Increase rating"><i class='bx bxs-upvote'></i></button>
+                    <p class="current-rating">1.9k</p>
+                    <button class="upvoting-button" title="Decrease rating"><i class='bx bxs-downvote'></i></button>
+                </div>
+            </div>
+
+
+            <!-- <img src="venues.png" width="588px"> -->
+
+            <button class="load-more-button" onclick="typeFilter('Bar/Pub')">Load more</button>
+
+
+
+
+            <!-- Repeat for other venues -->
+        </section>
+
+        <div class="map-container">
+            <!-- Google Maps integration here -->
+            <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis eum atque architecto quam consequuntur, quae odio adipisci laboriosam maxime! Temporibus velit qui fugiat. Illum eligendi quibusdam officiis autem, vero inventore.</p> -->
+            <iframe class="the-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9395065648855!2d-0.1779930236492224!3d51.51432581019769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876056dd9679e65%3A0x913bae141363b1a6!2sHarrison%E2%80%99s%20Coffee!5e0!3m2!1sen!2suk!4v1714605075357!5m2!1sen!2suk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </main>
+
+    <footer>
+        <p>© <script>document.write( new Date().getFullYear() );</script> Piscola.net | The Piscola Network</p>
+        <p class="footer-contact-info">Designed and built by Andrés Clavel &nbsp;
+            <a href="https://www.linkedin.com/in/andresclavel/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Claveler" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/Claveler" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <br>
+            <span id="feedback-request">Always happy to receive feedback through any of the channels above.</span>
+        </p>
+    </footer>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

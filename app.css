@@ -1,0 +1,643 @@
+* {
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+:root {
+    --accent-color: #d32117; /*#d34046;*/
+    --bg-color: #f4f5f7;
+    --counter-color: #301718;
+    --type-slider-left-prop: 0%;
+    --type-slider-width-prop: 0px;
+}
+
+body {
+    font-family: Blinker, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(to right, red 0% 50%, brown 50% 100%); */
+    /* background-color: var(--counter-color); */
+}
+
+main {
+    background-color: var(--bg-color);
+    /* background-image: url(torresdelpaine.jpg);
+    background-blend-mode: luminosity, normal;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    /* max-width: 1200px; */
+    display: grid;
+    height: auto;
+    grid-template-rows: auto auto;
+    grid-template-columns: 4fr 5fr;
+    grid-template-areas: 
+        'hero hero'
+        'venues map';
+}
+
+header {
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(10px);
+    padding: 0px;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 25%);
+    /* border-radius: 0px 0px 15px 15px; */
+}
+
+.logo {
+    display: inline-block;
+    margin: 0px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.logo #beta {
+    background-color: white;
+    opacity: 85%;
+    border-radius: 50px;
+    color: grey;
+    outline: 1px solid grey;
+    padding: 2px 8px;
+    font-weight: 400;
+    font-family: Blinker, sans-serif;
+    font-size: 0.7em;
+    transform: translate(4px, -2px);
+    cursor: progress;
+    transition: 1s;
+}
+
+.logo #beta:hover {
+    background-color: var(--accent-color);
+    opacity: 100%;
+    color: white;
+    outline-color: white;
+    transition: 1s;
+}
+
+.nav-links {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    font-size: 16px;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--counter-color);
+}
+
+.nav-links #add-source, .load-more-button {
+    background-color: var(--accent-color); /* Red background */
+    color: white;
+    margin: 0px;
+    padding: 0 20px; /* Horizontal padding of 20px, vertical padding will be 0 */
+    border-radius: 50px; /* 50px border radius for rounded corners */
+    text-align: center; /* Center text horizontally */
+    max-height: 45px; /* Maximum height of the div */
+    height: 100%; /* Ensures the div respects the max-height */
+    line-height: 45px; /* Same as the max height to vertically center the text */
+    width: auto; /* Width can adjust to content */
+    cursor: pointer; /* Cursor changes to a pointer when hovering over the div */
+    display: inline-block; /* Allows the div to behave more like an inline element */
+    border: 0px;
+    font-family: Blinker, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.nav-links #add-source a {
+    color:white;
+    font-weight: 600;
+}
+
+.nav-links #add-source a:hover {
+    opacity: 100%;
+}
+
+
+.hero {
+    grid-area: hero;
+    background-image: url('piscolaforreal.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-color: white;
+    background-position: center right;
+    /* width: 100%; */
+    height: auto;
+    padding: 50px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E8E8E8;
+}
+
+.hero-inner {
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+}
+
+.top-hero {
+    /* height: 50%; */
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid; */
+}
+
+.top-hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+    display: inline-block;
+    /* background-color: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(10px); */
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--counter-color);
+    text-shadow: 0px 0px 5px white;
+    /* -webkit-text-stroke: 5px white;
+    paint-order: stroke fill; */
+    font-size: 4em;
+    line-height: 1.1em;
+    /* overflow: auto; */
+    /* height: 1.1em; */
+    /* overflow: hidden; */
+    margin: 0px;
+    letter-spacing: -2px;
+    /* border: 3px solid; */
+}
+
+.top-hero p {
+    text-align: left;
+    /* color: var(--accent-color); */
+    margin: 0px;
+    margin-bottom: 15px;
+    width: 50%;
+    color: var(--counter-color);
+}
+
+.bottom-hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    color: white;
+    height: 50%;
+    width: 100%;
+}
+
+#type-selector {
+    font-family: inherit;
+    border: 3px solid #f4f5f7;
+    /* outline: 2px solid #e8e8e8; */
+    background-color: #f4f5f7;
+    border-radius: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    min-width:250px; /* I'm not sure I like this way of setting max-width */
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 10%);
+    overflow: hidden;
+}
+
+#bars-button, #stores-button {
+    transition: 0.5s;
+}
+
+#bars-button::before /* This is the type slider */ {
+	top: 0;
+    left: 0;
+	position: absolute;
+    content: "bars & pubs";
+    color:transparent;
+	background: var(--accent-color);
+    height: 100%;
+    font-size: 0.9rem;
+    margin: 0px;
+    padding: 0px 0px;
+    border-radius: 50px;
+    left: var(--type-slider-left-prop);
+    /* content: ""; */
+    width: var(--type-slider-width-prop);
+	transition: .5s;
+    z-index: -1;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 25%);
+}
+
+.type-btn {
+    background-color: transparent;
+    font-family: inherit;
+    border: none;
+    color: var(--accent-color);
+    height: 45px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.9rem;
+    /* font-weight: bold; */
+    z-index: 5;
+    /* transition: background-color 0.3s; */
+}
+
+.type-btn.selected {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* .search-container {
+    position: relative;
+} */
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #b8b8b8;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 300px;
+}
+
+.search-input:focus {
+    outline: 3px solid var(--accent-color);
+    /* border: 1px solid red; */
+}
+
+.search-btn {
+    /* position: absolute; */
+    right: 10px;
+    top: 50%;
+    transform: translateY(-70%);
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Responsive adjustments
+@media (max-width: 1024px) {
+    .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-container {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .search-input {
+        width: calc(100% - 20px);
+    }
+} */
+
+.add-venues-prompt {
+    display: flex;
+    flex-direction: column;
+    vertical-align: bottom;
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+    color: var(--counter-color);
+    border: 1px solid #e8e8e8;
+    padding: 10px 25px 10px 25px;
+    margin-bottom:25px;
+    font-weight: 600;
+}
+
+.add-venues-prompt a {
+    font-weight: 400;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.add-venues-form{
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    border-radius: 15px;
+    background-color: white;
+    /* backdrop-filter: blur(20px); */
+    color: var(--counter-color);
+    border: 1px solid #e8e8e8;
+    padding: 10px 25px 25px 25px;
+    margin-bottom:25px;
+    font-weight: 600;
+    /* z-index: 1000; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 25%);
+}
+
+.add-venues-form::backdrop {
+    background-color: rgba(0, 0, 0, 25%);
+    /* backdrop-filter: saturate(80%); */
+}
+
+.add-venues-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: center;
+}
+
+.add-venues-form p {
+    margin-bottom: 25px;
+}
+
+.add-venues-form div{
+    position: relative;
+    width: 100%;
+}
+
+.add-venues-form input, select, textarea {
+    border-radius: 25px;
+    width: 100%;
+    border: 1px solid gray;
+    font-family: Blinker, sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    padding: 10px;
+    resize: none;
+    /* padding-right: 50px; */
+}
+
+.add-venues-form i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.add-venues-form .text-input, .dropdown-input, .comments-input {
+    margin-bottom: 10px;
+}
+
+.comments-input textarea {
+    border-radius: 15px;
+}
+
+select {
+    appearance: none;
+}
+
+select:invalid {
+    color: gray;
+}
+
+.add-venues-form #submit-button{
+    background-color: var(--accent-color); /* Red background */
+    color: white;
+    margin: 0px;
+    padding: 0 20px; /* Horizontal padding of 20px, vertical padding will be 0 */
+    border-radius: 50px; /* 50px border radius for rounded corners */
+    text-align: center; /* Center text horizontally */
+    max-height: 45px; /* Maximum height of the div */
+    height: 100%; /* Ensures the div respects the max-height */
+    line-height: 45px; /* Same as the max height to vertically center the text */
+    width: auto; /* Width can adjust to content */
+    cursor: pointer; /* Cursor changes to a pointer when hovering over the div */
+    display: inline-block; /* Allows the div to behave more like an inline element */
+    border: 0px;
+    font-family: Blinker, sans-serif;
+    font-weight: 600;
+    font-size: 16px;   
+}
+
+.venues {
+    grid-area: venues;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 25px 25px 50px 50px;
+}
+
+.venue-card {
+    /* display: flex;
+    flex-direction: row; */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 33% auto 50px;
+    grid-template-areas: 
+        'image info upvoting';
+    vertical-align: top;
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    color: var(--counter-color);
+    border: 1px solid #e8e8e8;
+    /* padding: 10px 25px 10px 25px; */
+    margin-bottom:25px;
+    font-weight: 600;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.venue-card:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 25%);
+    transition: 0.5s;
+    /* transform: translate(0px, -2px); */
+}
+
+.venue-card-img{
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow: hidden;
+    background-image: url("http://via.placeholder.com/640x360");
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px 0px 0px 15px;
+    background-color: var(--counter-color);
+    border-left: 5px solid var(--counter-color);
+}
+
+.venue-card-info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: start;
+    margin: 15px 20px;
+}
+
+
+.venue-card-info-text h3 {
+    margin: 0px;
+}
+
+.venue-card-info-text p {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.venue-card-pisco-pills {
+    margin-bottom: 0px;
+    margin-top: 15px;
+    padding-left: 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.upvoting-ui{
+    grid-area: upvoting;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    color: rgba(255, 255, 255, 0.90);
+}
+
+.upvoting-ui:hover .current-rating {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.80);
+    transition: 0.2s;
+}
+
+.upvoting-button{
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    height: 25px;
+    width: 25px;
+    color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: 0.2s;
+    /* border: 2px solid rgba(255, 255, 255, 0.25); */
+}
+
+.upvoting-button:hover{
+    color: white;
+    transition: 0.2s;
+}
+
+.current-rating{
+    transition: 0.2s;
+}
+
+/* .venue {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.venue img {
+    width: 100%;
+    height: auto;
+} */
+
+.current-rating{
+    font-family: Actor, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.map-container {
+    grid-area: map;
+    align-self: flex-start;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+    padding: 25px 50px 25px 25px;
+    /* Google Maps placeholder styling */
+    display: flex;
+    flex-direction: column;
+}
+
+.the-map{
+    border-radius: 15px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--counter-color);
+    outline: 1px solid #e8e8e8;
+}
+
+footer {
+    text-align: center;
+    height: 150px;
+    width: 100%;
+    padding: 20px;
+    background: var(--counter-color);
+    color: #fff;
+    /* border-top: 1px solid white;
+    outline: 5px solid var(--accent-color); */
+}
+
+/* .footer-contact-info{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+} */
+
+.footer-contact-info a{
+    transition: 0.2s;
+}
+
+.footer-contact-info a:visited{
+    color: white;
+}
+
+.footer-contact-info a:hover{
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.80);
+    transition: 0.2s;
+}
+
+#feedback-request {
+    font-weight: 200;
+    opacity: 73%;
+}
