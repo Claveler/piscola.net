@@ -672,7 +672,11 @@ footer {
 }
 
 /* Responsive for phones */
-@media (max-width: 1000px){
+@media (max-width: 850px){
+    header {
+        position: unset;
+    }
+    
     .the-map{
         display: none;
     }
