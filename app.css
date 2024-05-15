@@ -672,7 +672,7 @@ footer {
 }
 
 /* Responsive for phones */
-@media (max-width: 800px){
+@media (max-width: 800px) and (orientation: portrait){
     header {
         position: unset;
     }
