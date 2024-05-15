@@ -606,7 +606,7 @@ select:invalid {
 
 footer {
     text-align: center;
-    height: auto;
+    /* height: 300px; */
     width: 100%;
     padding: 10px;
     background: var(--counter-color);
@@ -620,17 +620,14 @@ footer {
     outline: 5px solid var(--accent-color); */
 }
 
-/* .footer-contact-info{
-    color: white;
+.footer-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     vertical-align: middle;
-    justify-content: center;
-} */
-
-
-
+    justify-content: space-evenly;
+    margin: 5px;    
+}
 
 #footer-contact-info, #copyright-text, #grape-logo {
     margin: 5px;
