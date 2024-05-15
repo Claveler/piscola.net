@@ -711,6 +711,10 @@ footer {
         display: none;
     }
 
+    .search-input, .search-container {
+        width: 100%;
+    }
+
     .bottom-hero{
         flex-direction: column;
         height: 100px;
@@ -718,6 +722,7 @@ footer {
 
     .venues {
         padding: 25px;
+        margin: 0px;
     }
 
 
