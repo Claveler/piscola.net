@@ -582,6 +582,25 @@ select:invalid {
     font-weight: bold;
 }
 
+.show-map-button {
+    display: none; 
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    margin: 0px;
+    padding: 0px; 
+    border-radius: 50px; 
+    text-align: center; 
+    max-height: 45px;
+    height: 100%; 
+    line-height: 45px; 
+    cursor: pointer;
+    border: 0px;
+    font-family: Blinker, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
 .map-container {
     grid-area: map;
     align-self: flex-start;
@@ -650,4 +669,56 @@ footer {
 #feedback-request {
     font-weight: 200;
     opacity: 73%;
+}
+
+/* Responsive for phones */
+@media (max-width: 1000px){
+    .the-map{
+        display: none;
+    }
+
+    .map-container{
+        height: auto;
+        display: block;
+        position:unset;
+        padding: 25px 25px 0px 25px;
+    }
+
+    .show-map-button{
+        display: inline-block;
+    }
+
+    main {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+        'hero'
+        'map'
+        'venues';
+    }
+
+    nav {
+        align-items: center;
+        vertical-align: middle;
+        justify-content: space-around;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .top-hero p{
+        display: none;
+    }
+
+    .bottom-hero{
+        flex-direction: column;
+        height: 100px;
+    }
+
+    .venues {
+        padding: 25px;
+    }
+
+
 }
