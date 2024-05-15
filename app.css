@@ -606,11 +606,16 @@ select:invalid {
 
 footer {
     text-align: center;
-    height: 150px;
+    height: auto;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     background: var(--counter-color);
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-evenly;
     /* border-top: 1px solid white;
     outline: 5px solid var(--accent-color); */
 }
@@ -624,16 +629,23 @@ footer {
     justify-content: center;
 } */
 
-.footer-contact-info a{
+
+
+
+#footer-contact-info, #copyright-text, #grape-logo {
+    margin: 5px;
+}
+
+#footer-contact-info a{
     transition: 0.2s;
     color: white;
 }
 
-.footer-contact-info a:visited{
+#footer-contact-info a:visited{
     color: white;
 }
 
-.footer-contact-info a:hover{
+#footer-contact-info a:hover{
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.80);
     transition: 0.2s;
 }
