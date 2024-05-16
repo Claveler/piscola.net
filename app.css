@@ -685,17 +685,17 @@ footer {
 /* Responsive for phones */
 @media (max-width: 800px) {
     header {
-        position: fixed;
+        position: unset;
         top: 0px;
         left: 0px;
     }
 
-    /* .logo #beta {
+    .logo #beta {
         display: none;
-    }     */
+    }    
 
     .hero {
-        margin-top: 80px;
+        /* margin-top: 80px; */
         padding: 20px 50px;
         background-attachment: unset;
     }
