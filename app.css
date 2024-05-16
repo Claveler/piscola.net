@@ -684,15 +684,18 @@ footer {
 
 /* Responsive for phones */
 @media (max-width: 800px) {
-    /* header {
-        position: sticky;
-        top: 0px;
-        left: 0px;
-    } */
+    header {
+        height: 60px;
+    }
 
-    /* .logo #beta {
+    .logo img {
+        height: 35px;
+    }    
+
+    .logo #beta {
         display: none;
-    }     */
+        transform: scale(73%);
+    }
 
     .hero {
         /* margin-top: 80px; */
