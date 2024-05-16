@@ -690,13 +690,13 @@ footer {
         left: 0px;
     } */
 
-    .logo #beta {
+    /* .logo #beta {
         display: none;
-    }    
+    }     */
 
     .hero {
         /* margin-top: 80px; */
-        padding: 20px 50px;
+        padding: 20px 25px;
         background-attachment: unset;
     }
     
