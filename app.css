@@ -288,22 +288,52 @@ nav {
     font-weight: 600;
 }
 
-/* .search-container {
-    position: relative;
-} */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: start;
+    vertical-align: middle;
+}
 
 .search-input {
+    /* display: none; */
     padding: 10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
     border: 1px solid #b8b8b8;
     border-radius: 50px;
     font-family: inherit;
     font-size: 0.9rem;
     width: 300px;
+    height: 100%;
+    text-overflow: ellipsis;
 }
 
 .search-input:focus {
     outline: 3px solid var(--accent-color);
     /* border: 1px solid red; */
+}
+
+.show-map-button {
+    display: none; 
+    width: fit-content;
+    white-space: nowrap;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0px 20px; 
+    border-radius: 50px;
+    margin: 0px 0px 0px 10px;
+    text-align: center; 
+    max-height: 45px;
+    height: 100%; 
+    line-height: 45px; 
+    cursor: pointer;
+    border: 0px;
+    font-family: Blinker, sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .search-btn {
@@ -582,25 +612,6 @@ select:invalid {
     font-weight: bold;
 }
 
-.show-map-button {
-    display: none; 
-    width: 100%;
-    background-color: var(--accent-color);
-    color: white;
-    margin: 0px;
-    padding: 0px; 
-    border-radius: 50px; 
-    text-align: center; 
-    max-height: 45px;
-    height: 100%; 
-    line-height: 45px; 
-    cursor: pointer;
-    border: 0px;
-    font-family: Blinker, sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-}
-
 .map-container {
     grid-area: map;
     align-self: flex-start;
@@ -674,7 +685,11 @@ footer {
 /* Responsive for phones */
 @media (max-width: 800px) {
     header {
-        position: unset;
+        position: sticky;
+    }
+
+    .hero {
+        padding: 20px 50px;
     }
     
     .the-map{
@@ -682,8 +697,8 @@ footer {
     }
 
     .map-container{
+        display: none; /* block */
         height: auto;
-        display: block;
         position:unset;
         padding: 25px 25px 0px 25px;
     }
