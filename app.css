@@ -701,7 +701,8 @@ footer {
     }
     
     .the-map{
-        display: none;
+        display: block;
+        height: 30vh;
     }
 
     .map-container{
