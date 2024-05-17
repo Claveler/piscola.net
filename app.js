@@ -6,6 +6,7 @@ const barsButton = document.getElementById("bars-button");
 const storesButton = document.getElementById("stores-button");
 const mapContainer = document.querySelector(".map-container");
 const showMapButton = document.querySelector(".show-map-button");
+const mediaQuery = window.matchMedia('(min-width: 800px)');
 // const typeSlider = window.getComputedStyle(document.querySelector('#bars-selector'), ':before');
 
 // On to the functions that deal with the modal to add new piscola sources ---
@@ -30,19 +31,41 @@ addSourceModal.addEventListener("click", e => {
     ) {     closeAddSourceModal()}
 })
 
-// Function to show map when in mobile mode
+// Functionality to show map when in mobile mode
 
 showMapButton.addEventListener("click", () => {
     if (mapContainer.style.display === "none" || mapContainer.style.display === "") {
-        mapContainer.style.display = "block";
-        showMapButton.innerHTML = 'Hide &nbsp<i class="fa-solid fa-map-location-dot"></i>';
-        console.log("Map shown");
+        showMap();
     } else if (mapContainer.style.display === "block") {
-        mapContainer.style.display = "none";
-        showMapButton.innerHTML = 'Show &nbsp<i class="fa-solid fa-map-location-dot"></i>';
-        console.log("Map hidden");
-    }
+       hideMap(); 
+    }   
 });
+
+    // This is for when resizing the screen
+    function handleViewportChange(event) {
+        if (event.matches) {
+            showMap();
+        } else {
+            hideMap();
+        }
+    }
+
+    mediaQuery.addEventListener('change', handleViewportChange);
+
+    // Initial check
+    handleViewportChange(mediaQuery);
+
+function showMap () {
+    mapContainer.style.display = "block";
+    showMapButton.innerHTML = 'Hide &nbsp<i class="fa-solid fa-map-location-dot"></i>';
+    console.log("Map shown");
+}
+
+function hideMap () {
+    mapContainer.style.display = "none";
+    showMapButton.innerHTML = 'Show &nbsp<i class="fa-solid fa-map-location-dot"></i>';
+    console.log("Map hidden");
+}
 
 
 // Function to fetch venues from the JSON file
