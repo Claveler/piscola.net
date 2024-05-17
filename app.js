@@ -7,7 +7,6 @@ const storesButton = document.getElementById("stores-button");
 const mapContainer = document.querySelector(".map-container");
 const showMapButton = document.querySelector(".show-map-button");
 const mediaQuery = window.matchMedia('(min-width: 800px)');
-// const typeSlider = window.getComputedStyle(document.querySelector('#bars-selector'), ':before');
 
 // On to the functions that deal with the modal to add new piscola sources ---
 
