@@ -6,6 +6,8 @@ const barsButton = document.getElementById("bars-button");
 const storesButton = document.getElementById("stores-button");
 const mapContainer = document.querySelector(".map-container");
 const showMapButton = document.querySelector(".show-map-button");
+const navLinks = document.querySelector(".nav-links");
+const hamburger = document.querySelector(".hamburger");
 const mediaQuery = window.matchMedia('(min-width: 830px)');
 
 // On to the functions that deal with the modal to add new piscola sources ---
@@ -29,6 +31,16 @@ addSourceModal.addEventListener("click", e => {
         e.clientY > dialogDimensions.bottom
     ) {     closeAddSourceModal()}
 })
+
+// Functionality for the hamburger menu
+hamburger.addEventListener("click", () => {
+    const currentTransform = window.getComputedStyle(navLinks).transform;
+    if (currentTransform === 'matrix(1, 0, 0, 1, 0, 0)') {
+        navLinks.style.transform = 'translate(225px, 0px)';
+    } else {
+        navLinks.style.transform = 'translate(0px, 0px)';
+    }
+});
 
 // Functionality to show map when in mobile mode
 
