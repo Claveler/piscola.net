@@ -28,7 +28,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; */
-    /* max-width: 1200px; */
+    width: 100%;
     display: grid;
     height: auto;
     grid-template-rows: auto auto;
