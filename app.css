@@ -39,6 +39,8 @@ main {
 }
 
 header {
+    background: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(10px);
     padding: 0px;
     height: 80px;
     width: 100%;
@@ -50,8 +52,6 @@ header {
 }
 
 nav {
-    background: rgba(255, 255, 255, 0.73);
-    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -705,8 +705,8 @@ footer {
     }
 
     .nav-links{
-        display: flex;
-        position: absolute;
+        display: none; /* flex */
+        position: fixed;
         right: 0px;
         top: 0px;
         margin-top: 60px;
@@ -719,8 +719,7 @@ footer {
         padding: 25px;
         z-index: 10;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 25%);
-        transform: translate(225px, 0px);
-        transition: 0.5s;
+        /* transform: translate(225px, 0px); */
     }
 
     .hamburger {

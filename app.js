@@ -34,15 +34,31 @@ addSourceModal.addEventListener("click", e => {
 
 // Functionality for the hamburger menu
 hamburger.addEventListener("click", () => {
-    const currentTransform = window.getComputedStyle(navLinks).transform;
-    if (currentTransform === 'matrix(1, 0, 0, 1, 0, 0)') {
-        navLinks.style.transform = 'translate(225px, 0px)';
-        // navLinks.style.display = 'none';
-    } else {
-        navLinks.style.transform = 'translate(0px, 0px)';
-        // navLinks.style.display= 'flex'
+    // Check if the viewport width does NOT match the media query
+    if (!mediaQuery.matches) {
+        if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+            navLinks.style.display = 'flex';
+        } else {
+            navLinks.style.display = 'none';
+        }
     }
 });
+
+    // Handle the resize event
+    mediaQuery.addEventListener('change', () => {
+        if (mediaQuery.matches) {
+            navLinks.style.display = 'flex';
+        } else {
+            navLinks.style.display = 'none';
+        }
+    });
+
+    // Initial check to set the correct display property on page load
+    if (mediaQuery.matches) {
+        navLinks.style.display = 'flex';
+    } else {
+        navLinks.style.display = 'none';
+    }
 
 // Functionality to show map when in mobile mode
 
