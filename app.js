@@ -37,8 +37,10 @@ hamburger.addEventListener("click", () => {
     const currentTransform = window.getComputedStyle(navLinks).transform;
     if (currentTransform === 'matrix(1, 0, 0, 1, 0, 0)') {
         navLinks.style.transform = 'translate(225px, 0px)';
+        // navLinks.style.display = 'none';
     } else {
         navLinks.style.transform = 'translate(0px, 0px)';
+        // navLinks.style.display= 'flex'
     }
 });
 
