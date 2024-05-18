@@ -687,7 +687,7 @@ footer {
 }
 
 /* Responsive for phones */
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     header {
         height: 60px;
     }
