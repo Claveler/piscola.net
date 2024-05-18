@@ -38,8 +38,10 @@ hamburger.addEventListener("click", () => {
     if (!mediaQuery.matches) {
         if (navLinks.style.display === 'none' || navLinks.style.display === '') {
             navLinks.style.display = 'flex';
+            hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         } else {
             navLinks.style.display = 'none';
+            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
     }
 });
@@ -48,16 +50,20 @@ hamburger.addEventListener("click", () => {
     mediaQuery.addEventListener('change', () => {
         if (mediaQuery.matches) {
             navLinks.style.display = 'flex';
+            hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         } else {
             navLinks.style.display = 'none';
+            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
     });
 
     // Initial check to set the correct display property on page load
     if (mediaQuery.matches) {
         navLinks.style.display = 'flex';
+        hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     } else {
         navLinks.style.display = 'none';
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
 
 // Functionality to show map when in mobile mode
