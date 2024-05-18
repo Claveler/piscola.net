@@ -785,7 +785,7 @@ footer {
     }
 
     .venue-card-info h3 {
-        width: 30vw;
+        width: 25vw;
         overflow: hidden;
         text-overflow: ellipsis;
     }
