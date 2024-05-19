@@ -68,6 +68,7 @@ nav {
     margin: 0px;
     height: 45px;
     display: flex;
+    flex-direction: row;
     vertical-align: middle;
     justify-items: center;
     align-items: center;
@@ -695,13 +696,19 @@ footer {
         height: 60px;
     }
 
+    /* .logo {
+        flex-direction: column;
+    } */
+
     .logo img {
         height: 35px;
     }    
 
     .logo #beta {
-        display: none;
-        transform: scale(73%);
+        /* display: none; */
+        /* transform: scale(73%); */
+        position: absolute;
+        left: 25px;
     }
 
     .nav-links{
