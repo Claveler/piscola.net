@@ -18,6 +18,7 @@
 <body>
 
     <!-- This is the modal for adding new venues -->
+
     <dialog class="add-venues-form">
         <form method="dialog">
             <p>Discovered a new piscola spot? Share your find!</p>
@@ -74,7 +75,7 @@
                 <li><a href="https://en.wikipedia.org/wiki/Piscola">What is piscola?</a></li>
                 <li><a href="#">Why Piscola.net?</a></li>
                 <li>
-                    <button id="add-source" onclick="openAddSourceModal()">
+                    <button class="add-source" onclick="openAddSourceModal()">
                         Add a piscola source
                     </button>
                 </li>
@@ -179,6 +180,13 @@
             </p>
         </div>
     </footer>
+
+    <div class="add-piscola-mobile-cta">
+        <button class="add-source" onclick="openAddSourceModal()">
+            Add a piscola source
+        </button>
+        <p>Help us grow!</p>
+    </div>
 
 
     <script src="app.js"></script>
