@@ -10,6 +10,7 @@ const navLinks = document.querySelector(".nav-links");
 const hamburger = document.querySelector(".hamburger");
 const mediaQuery = window.matchMedia('(min-width: 830px)');
 const theMap = document.querySelector(".the-map");
+const searchInput = document.querySelector(".search-input");
 
 // On to the functions that deal with the modal to add new piscola sources ---
 
@@ -166,6 +167,11 @@ function updateMap(mapLink) {
     theMap.setAttribute('src', mapLink);
     showMap();
 }
+
+// Search functionality
+searchInput.addEventListener("click", () => {
+    searchInput.setAttribute("placeholder", `Functionality coming soon! :)`);
+})
 
 // Load and display venues when the DOM is fully loaded ---
 document.addEventListener('DOMContentLoaded', () => {
