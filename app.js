@@ -9,6 +9,7 @@ const showMapButton = document.querySelector(".show-map-button");
 const navLinks = document.querySelector(".nav-links");
 const hamburger = document.querySelector(".hamburger");
 const mediaQuery = window.matchMedia('(min-width: 830px)');
+const theMap = document.querySelector(".the-map");
 
 // On to the functions that deal with the modal to add new piscola sources ---
 
@@ -129,7 +130,7 @@ function displayVenues(type = "Bar/Pub", venues) {
     venues.filter(venue => venue.type === type).forEach(venue => {
         const drinksList = venue.drinks.map(drink => `<li>${drink.name} | <b>${drink.price}</b></li>`).join('');
         const venueHTML = `
-            <div class="venue-card">
+            <div class="venue-card" data-map="${venue.map}">
                 <div class="venue-card-img" style="background-image: url(${venue.imageUrl})"></div>
                 <div class="venue-card-info">
                     <div class="venue-card-info-text">
@@ -149,6 +150,21 @@ function displayVenues(type = "Bar/Pub", venues) {
         venueContainer.innerHTML += venueHTML;
     });
     venueContainer.innerHTML += loadMoreButton ? loadMoreButton.outerHTML : "";
+
+    // Add event listeners to venue cards
+    document.querySelectorAll('.venue-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const mapLink = card.getAttribute('data-map');
+            updateMap(mapLink);
+        });
+    });
+}
+
+// Function to update the map
+function updateMap(mapLink) {
+    console.log(mapLink);
+    theMap.setAttribute('src', mapLink);
+    showMap();
 }
 
 // Load and display venues when the DOM is fully loaded ---

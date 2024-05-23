@@ -567,7 +567,7 @@ select:invalid {
 
 .upvoting-ui{
     grid-area: upvoting;
-    display: flex;
+    display: none; /* flex */
     flex-direction: column;
     vertical-align: middle;
     align-items: center;
