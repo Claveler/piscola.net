@@ -128,28 +128,30 @@ function displayVenues(type = "Bar/Pub", venues) {
 
     venueContainer.innerHTML = addVenuesPrompt ? addVenuesPrompt.outerHTML : "";  // Keep the add venues prompt
 
-    venues.filter(venue => venue.type === type).forEach(venue => {
-        const drinksList = venue.drinks.map(drink => `<li>${drink.name} | <b>${drink.price}</b></li>`).join('');
-        const venueHTML = `
-            <div class="venue-card" data-map="${venue.map}">
-                <div class="venue-card-img" style="background-image: url(${venue.imageUrl})"></div>
-                <div class="venue-card-info">
-                    <div class="venue-card-info-text">
-                        <h3>${venue.name}</h3>
-                        <p>${venue.type}</p>
-                        <p>${venue.address}</p>
+    venues.filter(venue => venue.type === type)
+        .slice(0, 5)
+        .forEach(venue => {
+            const drinksList = venue.drinks.map(drink => `<li>${drink.name} | <b>${drink.price}</b></li>`).join('');
+            const venueHTML = `
+                <div class="venue-card" data-map="${venue.map}">
+                    <div class="venue-card-img" style="background-image: url(${venue.imageUrl})"></div>
+                    <div class="venue-card-info">
+                        <div class="venue-card-info-text">
+                            <h3>${venue.name}</h3>
+                            <p>${venue.type}</p>
+                            <p>${venue.address}</p>
+                        </div>
+                        <ul class="venue-card-pisco-pills">${drinksList}</ul>
                     </div>
-                    <ul class="venue-card-pisco-pills">${drinksList}</ul>
+                    <div class="upvoting-ui">
+                        <button class="upvoting-button" onclick="increaseRating(${venue.id})" title="Increase rating"><i class='bx bxs-upvote'></i></button>
+                        <p class="current-rating">${formatLikes(venue.likes)}</p>
+                        <button class="upvoting-button" onclick="decreaseRating(${venue.id})" title="Decrease rating"><i class='bx bxs-downvote'></i></button>
+                    </div>
                 </div>
-                <div class="upvoting-ui">
-                    <button class="upvoting-button" onclick="increaseRating(${venue.id})" title="Increase rating"><i class='bx bxs-upvote'></i></button>
-                    <p class="current-rating">${formatLikes(venue.likes)}</p>
-                    <button class="upvoting-button" onclick="decreaseRating(${venue.id})" title="Decrease rating"><i class='bx bxs-downvote'></i></button>
-                </div>
-            </div>
-        `;
-        venueContainer.innerHTML += venueHTML;
-    });
+            `;
+            venueContainer.innerHTML += venueHTML;
+        });
     venueContainer.innerHTML += loadMoreButton ? loadMoreButton.outerHTML : "";
 
     // Add event listeners to venue cards

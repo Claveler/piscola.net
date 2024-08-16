@@ -85,5 +85,41 @@
         "likes": 921,
         "imageUrl": "http://via.placeholder.com/640x360",
         "map": ""
+    },
+    {
+        "id": 8,
+        "name": "Broadwick Soho",
+        "type": "Bar/Pub",
+        "address": "Broadwick St, London W1F 8HS",
+        "drinks": [
+            { "name": "Gobernador", "price": "£12" }
+        ],
+        "likes": 921,
+        "imageUrl": "http://via.placeholder.com/640x360",
+        "map": ""
+    },
+    {
+        "id": 9,
+        "name": "INKO NITO",
+        "type": "Bar/Pub",
+        "address": "55 Broadwick St, Carnaby, London W1F 9QS",
+        "drinks": [
+            { "name": "Gobernador", "price": "£12" }
+        ],
+        "likes": 921,
+        "imageUrl": "http://via.placeholder.com/640x360",
+        "map": ""
+    },
+    {
+        "id": 10,
+        "name": "NOPI",
+        "type": "Bar/Pub",
+        "address": "21-22 Warwick St, London W1B 5NE",
+        "drinks": [
+            { "name": "Gobernador", "price": "£12" }
+        ],
+        "likes": 921,
+        "imageUrl": "http://via.placeholder.com/640x360",
+        "map": ""
     }
 ]
